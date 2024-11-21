@@ -91,7 +91,12 @@ jobs:
           - host: linux
             os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-            label: linux-x86_64
+            label: linux-gnu-x86_64
+
+          - host: linux
+            os: ubuntu-latest
+            target: x86_64-unknown-linux-musl
+            label: linux-musl-x86_64
 
           - host: macos
             os: macos-latest
