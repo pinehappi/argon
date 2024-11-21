@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [2.0.7] - 2024-11-21
+
 ### Added
 
 - `--force` parameter for `update` command that forces update even if there is no newer version
@@ -336,7 +338,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Brand new Argon CLI, written in Rust
 
-[unreleased]: https://github.com/argon-rbx/argon/compare/2.0.20...HEAD
+[unreleased]: https://github.com/pinehappi/argon/compare/2.0.7...HEAD
+[2.0.7]: https://github.com/pinehappi/argon/compare/2.0.20...2.0.7
 [2.0.20]: https://github.com/argon-rbx/argon/compare/2.0.19...2.0.20
 [2.0.19]: https://github.com/argon-rbx/argon/compare/2.0.18...2.0.19
 [2.0.18]: https://github.com/argon-rbx/argon/compare/2.0.17...2.0.18
