@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [2.0.107] - 2024-11-21
+
 ## [2.0.101] - 2024-11-21
 
 ## [2.0.100] - 2024-11-21
@@ -344,7 +346,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Brand new Argon CLI, written in Rust
 
-[unreleased]: https://github.com/pinehappi/argon/compare/2.0.101...HEAD
+[unreleased]: https://github.com/pinehappi/argon/compare/2.0.107...HEAD
+[2.0.107]: https://github.com/pinehappi/argon/compare/2.0.101...2.0.107
 [2.0.101]: https://github.com/pinehappi/argon/compare/2.0.100...2.0.101
 [2.0.100]: https://github.com/pinehappi/argon/compare/2.0.13...2.0.100
 [2.0.13]: https://github.com/pinehappi/argon/compare/2.0.7...2.0.13
