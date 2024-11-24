@@ -4,6 +4,7 @@ use rbx_dom_weak::types::Ref;
 use serde::Serialize;
 use snapshot::AddedSnapshot;
 use std::{
+	env,
 	fs::File,
 	io::BufWriter,
 	path::{Path, PathBuf},
@@ -40,7 +41,12 @@ impl Core {
 
 		trace!("Initializing VFS");
 
-		let vfs = Vfs::new(watch);
+		let vfs = if env::var("RUST_USE_VIRTUAL_FS").is_ok() {
+			trace!("Using in-memory VFS");
+			Vfs::new_virtual()	
+		} else {
+			Vfs::new(watch)
+		};
 
 		trace!("Snapshotting root project");
 

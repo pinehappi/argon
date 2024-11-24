@@ -60,6 +60,9 @@ pub struct Cli {
 	#[arg(long, hide = true, global = true)]
 	profile: bool,
 
+	#[arg(long, hide = true, global = true)]
+	use_virtual: bool,
+
 	/// Output coloring: auto, always, never
 	#[arg(
 		long,
@@ -80,6 +83,10 @@ impl Cli {
 
 	pub fn profile(&self) -> bool {
 		self.profile
+	}
+
+	pub fn use_virtual(&self) -> bool {
+		self.use_virtual
 	}
 
 	pub fn yes(&self) -> bool {

@@ -1,5 +1,5 @@
 use env_logger::WriteStyle;
-use log::{debug, error, info, warn};
+use log::{debug, error, info, warn, LevelFilter};
 use puffin_http::Server;
 use std::{
 	env,
@@ -26,8 +26,9 @@ fn main() -> ExitCode {
 
 	let yes = cli.yes();
 	let backtrace = cli.backtrace();
-	let verbosity = cli.verbosity();
+	let verbosity = LevelFilter::Trace;// cli.verbosity();
 	let log_style = cli.log_style();
+	let use_virtual = cli.use_virtual();
 
 	if log_style == WriteStyle::Auto && io::stdin().is_terminal() {
 		env::set_var("RUST_LOG_STYLE", "always");
@@ -44,6 +45,7 @@ fn main() -> ExitCode {
 	env::set_var("RUST_VERBOSE", verbosity.as_str());
 	env::set_var("RUST_YES", if yes { "1" } else { "0" });
 	env::set_var("RUST_BACKTRACE", if backtrace { "1" } else { "0" });
+	env::set_var("RUST_USE_VIRTUAL_FS", if use_virtual { "1" } else { "0" });
 
 	logger::init(verbosity, log_style);
 

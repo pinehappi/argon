@@ -3,13 +3,13 @@ use colored::Colorize;
 use include_dir::{include_dir, Dir};
 use log::trace;
 use rbx_dom_weak::types::Variant;
-use self_update::{backends::github::Update, self_replace, update::UpdateStatus};
+use self_update::{backends::github::Update, /*self_replace,*/ update::UpdateStatus};
 use std::{env, fs, path::Path};
 
 use crate::{
 	argon_error, argon_info,
 	ext::PathExt,
-	logger, updater,
+	/*logger, */updater,
 	util::{self, get_plugin_path},
 };
 
@@ -47,13 +47,14 @@ pub fn verify(is_managed: bool, with_plugin: bool) -> Result<()> {
 		#[cfg(target_os = "windows")]
 		let exe_path = bin_dir.join("argon.exe");
 
-		if !exe_path.exists() {
+		//if !exe_path.exists() {
+			println!("installed");
 			fs::copy(env::current_exe()?, &exe_path)?;
 
-			if logger::prompt("Installation completed! Do you want to remove this executable?", true) {
+			/*if logger::prompt("Installation completed! Do you want to remove this executable?", true) {
 				self_replace::self_delete()?;
-			}
-		}
+			}*/
+		//}
 	}
 
 	install_templates(false)?;
